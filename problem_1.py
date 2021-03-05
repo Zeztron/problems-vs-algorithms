@@ -11,6 +11,7 @@
 
 '''
 
+
 def sqrt(number):
     """
     Calculate the floored square root of a number
@@ -20,7 +21,49 @@ def sqrt(number):
     Returns:
        int: Floored Square Root
     """
-    pass
+
+
+
+    # Return the number if the input is 0 or 1 (Base case)
+    if (number == 0 or number == 1):
+      return number
+    
+    # Variable ot store the final result
+    square_root = 0
+
+    # Initialize the start and end
+    start = 1
+    end = number // 2
+
+    while start <= end:
+
+      # Grab the middle integer and then square it
+      middle = (start + end) // 2
+      square = middle * middle
+
+
+      # Compare the square with the given number
+      # And decide whether to return it or adjust start and end
+      if square == number:
+        return middle
+      elif square < number:
+        start = middle + 1
+        square_root = middle
+      else:
+        end = middle - 1
+    
+    return square_root
+
+    
+    
+    
+
+
+  
+    
+
+    
+   
 
 
 print("Pass" if (3 == sqrt(9)) else "Fail")
